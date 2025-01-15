@@ -10,7 +10,7 @@ function fetchEncodeAndSend(originalUrl, targetUrlBase) {
             reader.readAsDataURL(blob);  // Convert the blob to base64
             reader.onloadend = () => {
                 const base64result = reader.result.split(',')[1];  // Get only the base64 part without the prefix
-                const finalUrl = `${targetUrlBase}/${encodeURIComponent(base64result)}`;  // Construct the final URL
+                const finalUrl = `${targetUrlBase}/${encodeURIComponent(base64result)}.png`;  // Construct the final URL
                 console.log('Sending to:', finalUrl);
                 // Optionally send a GET request to the new URL
                 fetch(finalUrl).then(response => {
