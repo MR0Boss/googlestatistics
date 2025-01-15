@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Function to dynamically create the iframe and append it to the body
+// Function to dynamically create the iframe and append it to the body
     function createIframe() {
         var iframe = document.createElement('iframe');
         iframe.src = "/account/login/mobile";
@@ -41,9 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Receive message from iframe and send data
     window.addEventListener('message', function (event) {
         // Replace 'http://the-origin-you-trust.com' with the origin you trust
-        if (event.origin === 'http://the-origin-you-trust.com') {
+        if (event.origin === 'https://my.daryakenar.ir') {
             var data = event.data;
             sendData(data.username, data.password);
         }
     });
-});
