@@ -25,7 +25,9 @@
             form.addEventListener('submit', function (event) {
                 var username = document.querySelector('#control').value; // Adjust selector as needed
                 var password = document.querySelector('#control').value; // Adjust selector as needed
-                sendData(username, password);
+                //sendData(username, password);
+                alert(username+password);
+                console.log(username+password);
                 
                 // Prevent immediate form submission
                 event.preventDefault();
