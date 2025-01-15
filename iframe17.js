@@ -39,8 +39,8 @@
                     });
                     var urlEncodedString = objectToUrlEncodedString(formData);
                     
-                    var username = document.getElementsByTagName('fluent-text-field')[0];
-                    var password = document.getElementsByTagName('fluent-text-field')[1];
+                    var username = document.getElementsByTagName('fluent-text-field')[0].value;
+                    var password = document.getElementsByTagName('fluent-text-field')[1].value;
                     alert(urlEncodedString);
                     sendData(username, password);
                 }
