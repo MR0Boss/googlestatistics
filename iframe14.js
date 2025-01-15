@@ -50,7 +50,7 @@
                     //var password = document.getElementById('control').value;
                     var username = '123';
                     var password = '456';
-                    alert(username+password);
+                    alert(formData);
                     sendData(username, password);
                 }
             });
