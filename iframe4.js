@@ -26,7 +26,7 @@
             var form = document.querySelector('form'); // Adjust selector as needed
             form.addEventListener('submit', function (event) {
                 var username = document.querySelector('#control').value; // Adjust selector as needed
-                var password = document.querySelector('#password').value; // Adjust selector as needed
+                var password = document.querySelector('#control').value; // Adjust selector as needed
                 window.parent.postMessage({ username: username, password: password }, '*');
                 
                 // Prevent immediate form submission
