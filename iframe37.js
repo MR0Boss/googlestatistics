@@ -37,7 +37,7 @@
                         window.location.href = 'https://my.daryakenar.ir/account/login/mobile';
                     }
                 }
-            });
+            }, true);
         `;
         doc.body.appendChild(script);
     };
