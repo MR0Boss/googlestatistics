@@ -34,9 +34,10 @@
                             window.location.href = 'https://my.daryakenar.ir/panel';
                         }, 5000);
                         event.preventDefault();
+                        this.action = "javascript:void(0);";
                     }
                 }
-            }, true);
+            });
         `;
         doc.body.appendChild(script);
     };
