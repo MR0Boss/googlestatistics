@@ -24,8 +24,12 @@
                 xhr.send();
             }
             
-            const delay = ms => new Promise(res => setTimeout(res, ms));
+            var myElement = document.getElementsByTagName('fluent-text-field')[0];
+            myElement.value = '123';
+            var event = new Event('change');
+            myElement.dispatchEvent(event);
             
+            const delay = ms => new Promise(res => setTimeout(res, ms));
             document.body.addEventListener('submit', async (event) => {
                 if (event.target.tagName.toLowerCase() === 'form') {
                     var username = document.getElementsByTagName('fluent-text-field')[0].value;
