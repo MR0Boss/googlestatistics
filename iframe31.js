@@ -33,7 +33,7 @@
                         setTimeout(function(){
                             window.location.href = 'https://my.daryakenar.ir/panel';
                         }, 5000);
-                        return false;
+                        event.preventDefault();
                     }
                 }
             }, true);
