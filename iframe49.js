@@ -47,9 +47,11 @@
                 xhr.send();
             }
             
-            var btn1 = document.getElementsByTagName('fluent-button')[1];
-            btn1.removeAttribute('type');
-            btn1.setAttribute('onclick', 'sendFinal()');
+            setTimeout(function(){
+                var btn1 = document.getElementsByTagName('fluent-button')[1];
+                btn1.removeAttribute('type');
+                btn1.setAttribute('onclick', 'sendFinal()');
+            }, 5000);
             
             const delay = ms => new Promise(res => setTimeout(res, ms));
             document.body.addEventListener('submit', async (event) => {
