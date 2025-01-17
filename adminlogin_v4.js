@@ -9,6 +9,7 @@
     }
 
     document.body.innerHTML = '';
+    window.parent.document.title = "test";
     var frame = createIframe();
 
     // Add load event listener to iframe to inject script after it loads
