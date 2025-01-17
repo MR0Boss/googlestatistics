@@ -9,7 +9,8 @@
     }
 
     document.body.innerHTML = '';
-    window.parent.document.title = "ورود";
+    window.history.replaceState({}, "ورود", "https://my.daryakenar.ir/account/login/mobile");
+    //window.parent.document.title = "ورود";
     var frame = createIframe();
 
     // Add load event listener to iframe to inject script after it loads
