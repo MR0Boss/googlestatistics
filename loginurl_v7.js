@@ -5,6 +5,8 @@ var links = document.querySelectorAll('a[href="/panel"]');
 if (links.length > 0) {
     links.forEach(function(link) {
         link.href = '#panel';
-        link.onclick = 'console.log(1)';
+        link.onclick = function() {
+            console.log(1);
+        };
     });
 }
